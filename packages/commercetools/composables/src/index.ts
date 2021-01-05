@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-
+import { track } from '@vue-storefront/core';
 import useCategory from './useCategory';
 import useProduct from './useProduct';
 import useCart from './useCart';
@@ -10,8 +10,7 @@ import { useReview } from './useReview';
 import useFacet from './useFacet';
 import useUserShipping from './useUserShipping';
 import useUserBilling from './useUserBilling';
-import { setWishlist, useWishlist } from './useWishlist';
-import { track } from '@vue-storefront/core';
+import useWishlist from './useWishlist';
 
 track('VSFCommercetools');
 
@@ -25,7 +24,6 @@ export {
   useUserBilling,
   useWishlist,
   useUserShipping,
-  setWishlist,
   useReview,
   useFacet
 };

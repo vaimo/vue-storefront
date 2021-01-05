@@ -1,13 +1,16 @@
 # Changelog
 
 ## 2.2.0 (not released)
+- added MegaMenu to theme ([#5267](https://github.com/vuestorefront/vue-storefront/issues/5267))
 - added bottom margin to fix visibility of last footer category ([#5253](https://github.com/DivanteLtd/vue-storefront/issues/5253))
 - [BREAKING] refactored names of many factory methods and composable methods, details in linked PR ([#5299](https://github.com/DivanteLtd/vue-storefront/pull/5299))
 - [BREAKING] changed signatures of factory methods to always 2 arguments, details in linked PR ([#5299](https://github.com/DivanteLtd/vue-storefront/pull/5299))
 - [BREAKING] composables are always returning one field for the response, removed `totalOrders` and `totalProducts`, `useCartFactory` and `useUserFactory` are returning only composables ([#5330](https://github.com/vuestorefront/vue-storefront/pull/5330))
 - removed `formatPrice` from `useUiHelpers`, replaced by vue18n `$n` function ([#5339](https://github.com/vuestorefront/vue-storefront/pull/5339))
 - updated integration boilerplate to work with refactored names of factories mentioned above ([#5348](https://github.com/DivanteLtd/vue-storefront/pull/5348))
+- change `useUserBillingFactory`, `useUserShippingFactory` and `useWishlistFactory` to return composable, move `setWishlist` inside of composable ([5350](https://github.com/vuestorefront/vue-storefront/pull/5350))
 - optimize loading of fonts and their stylesheets from Google Fonts and introduce lazy hydration to improve performance ([#5326](https://github.com/DivanteLtd/vue-storefront/pull/5326))
+- added missing `i18n` tags ([#5337](https://github.com/vuestorefront/vue-storefront/issues/5337))
 
 ## 2.1.1-rc.1
 - updated version of nuxt composition-api
