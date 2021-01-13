@@ -272,12 +272,12 @@ interface LineItem { /* ... */}
 interface ProductVariant { /* ... */ }
 
 const factoryParams: UseCartFactoryParams<Cart, LineItem, ProductVariant> = {
-  loadCart: async (context: Context) => {
+  load: async (context: Context) => {
     const { data } = await context.$ct.api.getCart();
 
     return data.cart;
   },
-  addToCart: async (context: Context, params) => {
+  addItem: async (context: Context, params) => {
     const { currentCart, product, quantity } = params;
     const { data } = await context.$ct.api.addToCart(loadedCart, product, quantity, customQuery);
 
@@ -314,7 +314,7 @@ const factoryParams: UseUserFactoryParams = {
   setup() {
     return useCart();
   },
-  loadUser: async (context: UserContext) => {
+  load: async (context: UserContext) => {
     const { data } = await context.$ct.api.getUser();
 
     context.setCart(data.activeCart);
@@ -339,7 +339,7 @@ const useCart = () => {
   const cart = vsfRef(null, 'my-own-cart')
   const context = generateContext(); // we do the job for you
 
-  const addToCart = async (product) => {
+  const addToCart = async ({ product }) => {
     return context.$ownAPI.updateCart(product)
   }
 
@@ -415,7 +415,7 @@ import { onSSR } from '@vue-storefront/core';
 
 export default {
   setup () {
-    const { cart, loadCart } = useCart();
+    const { cart, load: loadCart } = useCart();
 
     const items = computed(() => cartGetters.getItems(cart.value))
 
