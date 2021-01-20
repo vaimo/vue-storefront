@@ -21,7 +21,7 @@
 
       <CartSidebar />
       <WishlistSidebar />
-      <LoginModal />
+      <AuthModal />
       <Notification />
     </div>
   </div>
@@ -47,7 +47,7 @@ export default {
     AppFooter,
     CartSidebar,
     WishlistSidebar,
-    LoginModal,
+    AuthModal,
     Notification
   }
 };
