@@ -16,9 +16,6 @@ const connectActions = {
    */
   async clear ({ commit, dispatch }, { disconnect = true, sync = true } = {}) {
     await commit(types.CART_LOAD_CART, [])
-    // clean totals when customer is logged out.
-    await commit(types.CART_UPD_TOTALS, { itemsAfterTotal: null, totals: null, platformTotalSegments: null })
-
     if (sync) {
       await dispatch('sync', { forceClientState: true, forceSync: true })
     }

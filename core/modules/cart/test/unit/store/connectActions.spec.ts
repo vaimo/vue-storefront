@@ -59,8 +59,9 @@ describe('Cart connectActions', () => {
     await wrapper(cartActions);
 
     expect(contextMock.commit).toHaveBeenNthCalledWith(1, types.CART_LOAD_CART, []);
+    expect(contextMock.commit).toHaveBeenNthCalledWith(2, types.CART_UPD_TOTALS, { itemsAfterTotal: null, totals: null, platformTotalSegments: null });
     expect(contextMock.dispatch).toHaveBeenNthCalledWith(1, 'sync', { forceClientState: true, forceSync: true });
-    expect(contextMock.commit).toHaveBeenNthCalledWith(2, types.CART_SET_ITEMS_HASH, null);
+    expect(contextMock.commit).toHaveBeenNthCalledWith(3, types.CART_SET_ITEMS_HASH, null);
     expect(contextMock.dispatch).toHaveBeenNthCalledWith(2, 'disconnect');
   });
 
@@ -77,6 +78,7 @@ describe('Cart connectActions', () => {
     await wrapper(cartActions);
 
     expect(contextMock.commit).toHaveBeenNthCalledWith(1, types.CART_LOAD_CART, []);
+    expect(contextMock.commit).toHaveBeenNthCalledWith(2, types.CART_UPD_TOTALS, { itemsAfterTotal: null, totals: null, platformTotalSegments: null });
     expect(contextMock.dispatch).toHaveBeenNthCalledWith(1, 'sync', { forceClientState: true, forceSync: true });
   });
 
@@ -93,7 +95,8 @@ describe('Cart connectActions', () => {
     await wrapper(cartActions);
 
     expect(contextMock.commit).toHaveBeenNthCalledWith(1, types.CART_LOAD_CART, []);
-    expect(contextMock.commit).toHaveBeenNthCalledWith(2, types.CART_SET_ITEMS_HASH, null);
+    expect(contextMock.commit).toHaveBeenNthCalledWith(2, types.CART_UPD_TOTALS, { itemsAfterTotal: null, totals: null, platformTotalSegments: null });
+    expect(contextMock.commit).toHaveBeenNthCalledWith(3, types.CART_SET_ITEMS_HASH, null);
     expect(contextMock.dispatch).toHaveBeenNthCalledWith(1, 'disconnect');
   });
 
